@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Découvrez le portfolio de Valentino Paganin, développeur web passionné. Parcourez mes projets, compétences et réalisations en développement front-end et web design. Transformons ensemble vos idées en expériences digitales uniques !"
+    />
+    <meta
+      name="keywords"
+      content="Portfolio, Valentino Paganin, web developer, HTML, CSS, JavaScript, front-end"
+    />
+    <meta name="author" content="Valentino Paganin" />
+
+    <meta property="og:title" content="Valentino Paganin Portfolio" />
+    <meta property="og:description" content="Découvrez le portfolio de Valentino Paganin, développeur web passionné. Parcourez mes projets, compétences et réalisations en développement front-end et web design." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://montsy744.github.io/portfolio/" />
+
+    <link rel="icon" type="image/svg+xml" href="./public/IMG_7267.webp" />
+    <title>Valentino P. Portfolio</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+
+    <script
+      src="https://kit.fontawesome.com/d84e16f660.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="btnHeader" id="liens">
+          <a href="#aboutMe" class="reveal" data-delay="0.3" aria-label="About Me">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+          </a>
+          <a href="#portfolioExplore" class="reveal" data-delay="0.5" aria-label="Portfolio">
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+          </a>
+        </div>
+        <label for="language-selector" class="sr-only">Select Language</label>
+        <select id="language-selector">
+          <option value="en">English</option>
+          <option value="fr" selected>Français</option>
+        </select>
+      </nav>
+    </header>
+
+    <section id="accueil">
+      <div class="container">
+        <div class="texte">
+          <h1 id="welcome">WELCOME TO MY</h1>
+          <h1 id="portfolio" class="degradeCouleur" style="font-family: 'titre'">
+            WEBSITE PORTFOLIO
+          </h1>
+        </div>
+
+        <a href="https://montsy744.github.io/OhMyCode/" id="ohmycode" class="reveal" data-delay="0.4" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-circle-user" aria-hidden="true"></i>
+          https://Montsy744.github.io/OhMyCode
+        </a>
+        <div class="stars"></div>
+      </div>
+    </section>
+
+    <section id="aboutMe">
+      <h2 class="degradeCouleur" id="about_title">ABOUT ME</h2>
+      <p class="textSousTitre" id="about_intro">
+        <i class="fa-solid fa-fan fleur" style="color: #8a64de" aria-hidden="true"></i>
+        Transforming ideas into digital experiences
+        <i class="fa-solid fa-fan fleur" style="color: #8a64de" aria-hidden="true"></i>
+      </p>
+
+      <div class="aboutMeParent">
+        <div class="div1 reveal" data-delay="0.8">
+          <h3 class="degradeCouleur" id="about_hello">Hello, I'm</h3>
+          <h3>Valentino Paganin</h3>
+          <p style="text-align: justify" id="about_text">
+            I'm a French student in Web Development. I love turning ideas and projects into real websites. Passionate about web technologies, I can create attractive and functional user interfaces. My goal is to provide a smooth and enjoyable user experience while following development best practices. I am always looking for new challenges and opportunities to learn and grow in this dynamic field.
+          </p>
+          <div class="containerDownload">
+            <a href="./public/cv/CV_Valentino_Paganin.pdf" download="CV_Valentino_Paganin.pdf" class="download-btn" id="cv_button">
+              Download my CV
+            </a>
+          </div>
+        </div>
+
+        <div class="div2">
+          <img src="./public/Valentino.jpg" alt="Photo de Valentino Paganin" class="reveal" data-delay="0.5" />
+        </div>
+
+        <div class="div3">
+          <div class="case reveal" data-delay="0.3">
+            <div>
+              <i class="fa-solid fa-code fa-3x" aria-hidden="true"></i>
+              <h4 id="project_total_title">TOTAL PROJECTS</h4>
+              <p style="font-size: large" id="project_total">All my web projects</p>
+            </div>
+            <h1>4</h1>
+          </div>
+          <div class="case reveal" data-delay="0.5">
+            <div>
+              <i class="fa-solid fa-graduation-cap fa-3x" aria-hidden="true"></i>
+              <h4 id="certificates_title">CERTIFICATES</h4>
+              <p style="font-size: large" id="certificates">All my professional skills</p>
+            </div>
+            <h1>1</h1>
+          </div>
+          <div class="case reveal" data-delay="0.7">
+            <div>
+              <i class="fa-solid fa-calendar-days fa-3x" aria-hidden="true"></i>
+              <h4 id="experience_title">EXPERIENCE</h4>
+              <p style="font-size: large" id="experience">Years of experience</p>
+            </div>
+            <h1>1</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolioExplore">
+      <h2 class="degradeCouleur" id="portfolio_showcase">Portfolio Showcase</h2>
+      <p class="textSousTitre" id="portfolio_subtitle">
+        Explore my web projects, certifications, and technical expertise.
+      </p>
+
+      <div id="choix">
+        <div class="reveal btn-choix" id="btn-choix4" data-delay="0.6">
+          <p id="btn_university">University projects</p>
+        </div>
+        <div class="reveal btn-choix" id="btn-choix1" data-delay="0.4">
+          <p id="btn_personal">Personal projects</p>
+        </div>
+        <div class="reveal btn-choix" id="btn-choix2" data-delay="0.6">
+          <p id="btn_certificates">Certificates</p>
+        </div>
+        <div class="reveal btn-choix" id="btn-choix3" data-delay="0.8">
+          <p id="btn_skills">Skills</p>
+        </div>
+      </div>
+
+      <!-- Modals générables via JS -->
+      <div id="modal1" class="modal"></div>
+      <div id="modal2" class="modal"></div>
+      <div id="modal3" class="modal"></div>
+      <div id="modal4" class="modal"></div>
+    </section>
+
+    <script src="./js/script.js" defer></script>
+    <script src="./js/scroll-reveal.js" defer></script>
+    <script src="./js/lang.js" defer></script>
+    <script src="./js/PortfolioShowcase.js" defer></script>
+    <script src="./js/defilement.js" defer></script>
+  </body>
+</html>

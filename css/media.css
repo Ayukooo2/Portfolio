@@ -1,0 +1,121 @@
+@media screen and (max-width: 999px) {
+  #btn-choix2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .div3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .div3 div {
+    margin: 10px;
+  }
+  .div1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #aboutMe {
+    margin-top: 10rem;
+    height: 100rem;
+  }
+
+  #about_title {
+    display: none;
+  }
+
+  #about_intro {
+    display: none;
+  }
+
+  .aboutMeParent {
+    height: 1300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .webProject {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .textSousTitre {
+    text-align: center;
+  }
+
+  #skilsContaineur div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+  .webProject {
+    margin-bottom: 200px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .aboutMeParent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .div3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 499px) {
+  .textSousTitre {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fleur {
+    display: none;
+  }
+
+  #ohmycode {
+    display: none;
+  }
+  #ohmycodetel {
+    display: block;
+    z-index: 1;
+    margin-top: 10%;
+    padding: 10px;
+    color: aliceblue;
+  }
+  #choix {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #welcome, #portfolio {
+    font-size: 2rem;
+  }
+
+  header {
+    width: auto;
+    position: relative;
+  }
+}
