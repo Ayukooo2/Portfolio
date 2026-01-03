@@ -1,13 +1,11 @@
 // Récupération des modals
 const portfolio = document.getElementById("modal1");
 const certification = document.getElementById("modal2");
-const skills = document.getElementById("modal3");
 const university = document.getElementById("modal4");
 
 // Récupération des boutons
 const btnPortfolio = document.getElementById("btn-choix1");
 const btnCertification = document.getElementById("btn-choix2");
-const btnSkills = document.getElementById("btn-choix3");
 const btnUniversity = document.getElementById("btn-choix4");
 
 // Données des projets
@@ -28,28 +26,65 @@ const personalProjects = [
 
 const universityProjects = [
   {
-    title: "University Project 1",
-    desc: "Project for university assignment",
-    details: "Built as part of a team to develop a web application using HTML, CSS, and JavaScript.",
+    title: "Mini Shell",
+    desc: "2025 > Création d'un Shell en C",
+    details: "en Travaux Dirigés : Développement d'un Shell en C interactif dans le terminal, avec des forks et gestion des PID.",
+    img: "./public/imageProject/ShellC.png",
+  },
+  {
+    title: "RTL - Rule The Labyrinth",
+    desc: "2025 > Jeu codé en Java et FXML",
+    details: "En groupe de 4 : Développement d'un labyrinthe en JAVA avec du FXML, respectant les principes SOLID et en MVC.",
+    img: "./public/imageProject/RuleTheLabyrinth.png",
+  },
+  {
+    title: "One man One Forest",
+    desc: "2025 > Jeu de survie en Java dans le terminal",
+    details: "En groupe de 5 : Développement d'un jeu de survie en JAVA purement dans le terminal, en respectant la méthodologie agile",
     img: "./public/IMG_7267.webp",
+  },
+  {
+    title: "Ado Match",
+    desc: "2025 > Application pour créer des groupes (d'ados) en Java et FXML",
+    details: "En groupe de 3 : Développement d'une application pour apparier des adolescents, première approche de la sérialisation",
+    img: "./public/imageProject/AdoMatch.png",
+  },
+  {
+    title: "Manipuler données des JO",
+    desc: "2025 > Premières utilisations des BDD",
+    details: "En groupe de 2 : Projet d’initiation aux bases de données relationnelles avec Access et SQL, avec un fichier récupéré dés données des JO d’été 1988.",
+    img: "./public/imageProject/HiverJO1988.png",
+  },
+  {
+    title: "Installation VM",
+    desc: "2024 > Mise en place d'une VM Linux",
+    details: "En groupe de 4 : Mise en place d'une VM dans l’environnement Linux, gestion des utilisateurs, permissions, partition disques...",
+    img: "./public/imageProject/InstallationReseau.png",
+  },
+  {
+    title: "Ride With Spotify",
+    desc: "2024 > Création de notre premier site web",
+    details: "En groupe de 3 : Création d'une Site en HTML et CSS simulant une application de covoiturage pour une entreprise",
+    img: "./public/imageProject/RideWithSpotify.png",
+  },
+  {
+    title: "CompilFighter",
+    desc: "2024 > Premier Projet universitaire",
+    details: "En groupe de 2 : Réalisation d'un jeu tour par tour ludo-pédagogique en IJava (java simplifié).",
+    img: "./public/imageProject/CompilFighter.png",
   }
 ];
 
 const certifications = [
   {
-    title: "Web Development Certificate",
-    desc: "Completed online course",
-    details: "Certificate earned for completing a full-stack web development program.",
+    title: "BAC Général",
+    desc: "Obtention du Bac Général en 2024",
+    details: "Obtention dans le lycée Charlotte Perriand à Genech, avec les spécialités Mathématiques et NSI (+ Physique Chimie).",
     img: "./public/IMG_7267.webp",
   }
 ];
 
-const skillsList = [
-  { name: "HTML", color: "#e86026" },
-  { name: "CSS", color: "#0f6cac" },
-  { name: "JavaScript", color: "#f4dd1b" },
-  { name: "Git", color: "#ed4b26" }
-];
+
 
 // Crée une carte de projet avec modal interne pour détails et image
 function createProjectCard(project) {
@@ -75,21 +110,12 @@ function createProjectCard(project) {
   `;
 }
 
-// Crée une carte de compétence
-function createSkillCard(skill) {
-  return `
-    <div class="skilsItem">
-      <h3 style="color:${skill.color}">${skill.name}</h3>
-    </div>
-  `;
-}
 
 // Injection des contenus dans les modals
 function populateModals() {
   portfolio.innerHTML = `<div class="webProject">${personalProjects.map(createProjectCard).join("")}</div>`;
   university.innerHTML = `<div class="universityProject">${universityProjects.map(createProjectCard).join("")}</div>`;
   certification.innerHTML = `<div id="certificationContaineur">${certifications.map(createProjectCard).join("")}</div>`;
-  skills.innerHTML = `<div id="skilsContaineur">${skillsList.map(createSkillCard).join("")}</div>`;
 
   // Ajout des événements pour les boutons "View" et fermer les détails
   document.querySelectorAll(".view-btn").forEach((btn) => {
@@ -109,10 +135,11 @@ function populateModals() {
 
 // Appel pour remplir les modals dès le chargement
 populateModals();
+showModal(university, btnUniversity, false);
 
 // Fonction pour afficher un modal principal
-function showModal(modalToShow, btnToHighlight) {
-  [portfolio, certification, skills, university].forEach(modal => {
+function showModal(modalToShow, btnToHighlight, shouldScroll = true) {
+  [portfolio, certification, university].forEach(modal => {
     modal.classList.remove("show");
     modal.style.opacity = "0";
   });
@@ -120,17 +147,18 @@ function showModal(modalToShow, btnToHighlight) {
   modalToShow.classList.add("show");
   setTimeout(() => modalToShow.style.opacity = "1", 10);
 
-  const offset = btnPortfolio.offsetTop;
-  window.scrollTo({ top: offset - 50, behavior: "smooth" });
+  // 🔥 Scroll seulement si demandé
+  if (shouldScroll) {
+    const offset = btnPortfolio.offsetTop;
+    window.scrollTo({ top: offset - 160, behavior: "smooth" });
+  }
 
-  [btnPortfolio, btnCertification, btnSkills, btnUniversity].forEach(btn => {
+  [btnPortfolio, btnCertification, btnUniversity].forEach(btn => {
     btn.style.backgroundColor = "transparent";
   });
   btnToHighlight.style.backgroundColor = "rgba(107, 104, 128, 0.6)";
 }
 
-// Affichage par défaut des projets personnels
-showModal(portfolio, btnPortfolio);
 
 // Événements pour les boutons principaux
 btnPortfolio.addEventListener("click", () => showModal(portfolio, btnPortfolio));

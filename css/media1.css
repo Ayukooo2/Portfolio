@@ -68,39 +68,12 @@
     align-items: center;
   }
 
-  .webProject {
+  .webProject, .universityProject,  #certificationContaineur  {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 20px;
-  }
-  #certificationContaineur {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-  }
-
-  #certificationContaineur div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    text-align: center;
-  }
-
-  .certificationGrid1 img {
-    width: 100%;
-  }
-
-  #skilsContaineur {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -167,35 +140,12 @@
     align-items: center;
   }
 
-  .webProject {
+  .webProject, .universityProject,  #certificationContaineur {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 20px;
   }
-  #certificationContaineur {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #certificationContaineur div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    text-align: center;
-  }
-
-  #skilsContaineur {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+  
 }

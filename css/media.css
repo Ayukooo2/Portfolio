@@ -1,3 +1,5 @@
+/* Obsolete*/
+/*
 @media screen and (max-width: 999px) {
   #btn-choix2 {
     display: none;
@@ -56,13 +58,6 @@
 @media screen and (max-width: 699px) {
   .textSousTitre {
     text-align: center;
-  }
-
-  #skilsContaineur div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   body {
