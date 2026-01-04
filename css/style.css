@@ -18,6 +18,8 @@
 }
 html {
   font-family: "sour-gummy";
+  scroll-behavior: smooth; /* Pour un défilement fluide */
+  scroll-padding-top: 80px;
 }
 body {
   background-color: hsla(229, 0%, 0%, 1);
