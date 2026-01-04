@@ -539,3 +539,28 @@ h1 {
   cursor: pointer;
 }
 
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: transparent;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+footer a {
+  color: #6b6880; /* Ou ta couleur dégradée */
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.close-legal {
+  cursor: pointer;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}

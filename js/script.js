@@ -41,3 +41,24 @@ function createStar() {
 
 // Créer plusieurs étoiles en continu
 setInterval(createStar, 500); // Crée une étoile toutes les 500ms
+
+
+const legalModal = document.getElementById("legal-modal");
+const openLegal = document.getElementById("open-legal");
+const closeLegal = document.querySelector(".close-legal");
+
+openLegal.addEventListener("click", (e) => {
+  e.preventDefault();
+  legalModal.style.display = "flex";
+});
+
+closeLegal.addEventListener("click", () => {
+  legalModal.style.display = "none";
+});
+
+// Fermer si on clique en dehors du contenu
+window.addEventListener("click", (e) => {
+  if (e.target === legalModal) {
+    legalModal.style.display = "none";
+  }
+});
