@@ -435,7 +435,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.universityProject {
+.universityProject, .certificationContaineur {
   padding: 40px 70px;
   border-radius: 20px;
   background-color: rgba(3, 9, 56, 0.3);
@@ -446,42 +446,6 @@ h1 {
   margin: 10px;
 }
 
-#certification {
-  width: 100%;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#certificationContaineur {
-  padding: 20px;
-  border-radius: 20px;
-  background-color: rgba(3, 9, 56, 0.3);
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.certificationGrid1 {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.certificationGrid2 {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 25rem;
-  min-height: 25rem;
-}
 
 
 .reveal {

@@ -1,151 +1,283 @@
-@media screen and (max-width: 600px) {
-  /* Styles pour les mobiles et petites tablettes */
-  body {
-    background-color: hsla(229, 0%, 0%, 1);
-    background-image: radial-gradient(
-        at 41% 34%,
-        hsla(231, 100%, 31%, 0.27) 0px,
-        transparent 50%
-      ),
-      radial-gradient(at 80% 0%, hsla(274, 100%, 56%, 1) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, hsla(283, 100%, 36%, 1) 0px, transparent 50%),
-      radial-gradient(at 80% 50%, hsla(238, 55%, 56%, 1) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(230, 66%, 49%, 1) 0px, transparent 50%),
-      radial-gradient(at 80% 100%, hsla(222, 77%, 26%, 1) 0px, transparent 50%),
-      radial-gradient(at 0% 0%, hsla(231, 59%, 33%, 1) 0px, transparent 50%);
-    background-attachment: local;
-    color: white;
-  }
-  .div1 .containerDownload {
-    margin: 50px;
-    font-size: large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .case {
-    width: 100%;
-  }
-  .div3 {
-    width: 100%;
-  }
-  .container .texte h1 {
-    font-size: 2rem;
-  }
-  .container #ohmycodetel {
-    display: block;
-  }
-  .container #ohmycode {
-    display: none;
-  }
-  .aboutMeParent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .aboutMeParent .div3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .textSousTitre {
-    text-align: center;
-  }
-  .aboutMeParent .div3 div {
-    margin: 20px;
-    width: 100%;
-  }
-  .aboutMeParent img {
-    margin: 20px;
-  }
-  #choix {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+/* =========================
+   RESET & FONTS
+========================= */
 
-  .webProject, .universityProject,  #certificationContaineur  {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  body {
-    background-color: hsla(229, 0%, 0%, 1);
-    background-image: radial-gradient(
-        at 41% 34%,
-        hsla(231, 100%, 31%, 0.27) 0px,
-        transparent 50%
-      ),
-      radial-gradient(at 80% 0%, hsla(274, 100%, 56%, 1) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, hsla(283, 100%, 36%, 1) 0px, transparent 50%),
-      radial-gradient(at 80% 50%, hsla(238, 55%, 56%, 1) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(230, 66%, 49%, 1) 0px, transparent 50%),
-      radial-gradient(at 80% 100%, hsla(222, 77%, 26%, 1) 0px, transparent 50%),
-      radial-gradient(at 0% 0%, hsla(231, 59%, 33%, 1) 0px, transparent 50%);
-    background-attachment: local;
-    color: white;
-  }
-  .div1 .containerDownload {
-    margin: 50px;
-    font-size: large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .container .texte h1 {
-    font-size: 2rem;
-  }
-  .container #ohmycodetel {
-    display: block;
-  }
-  .container #ohmycode {
+@font-face {
+  font-family: "titre";
+  src: url("./../public/police/BubblegumSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "sour-gummy";
+  src: url("./../public/police/SourGummy-Regular.ttf");
+}
+
+:root {
+  --html: #e86026;
+  --css: #0f6cac;
+  --js: #f4dd1b;
+  --git: #ed4b26;
+}
+
+html {
+  font-family: "sour-gummy";
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+body {
+  background-color: hsla(229, 0%, 0%, 1);
+  background-image:
+    radial-gradient(at 41% 34%, hsla(231, 100%, 31%, 0.27) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(274, 100%, 56%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(283, 100%, 36%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(238, 55%, 56%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(230, 66%, 49%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(222, 77%, 26%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(231, 59%, 33%, 1) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: white;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+p {
+  font-size: x-large;
+}
+
+.colorHtml { color: var(--html); }
+.colorCss  { color: var(--css); }
+.colorJs   { color: var(--js); }
+.colorGit  { color: var(--git); }
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(3, 9, 56, 0.3);
+}
+
+#language-selector {
+  margin: 0 20px;
+  padding: 10px;
+  background-color: rgba(3, 9, 56, 0.4);
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  font-family: "titre";
+  cursor: pointer;
+}
+
+#language-selector:hover {
+  background-color: rgba(3, 9, 56, 0.6);
+}
+
+/* =========================
+   ACCUEIL
+========================= */
+
+#accueil {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  padding: 10%;
+  background-color: rgba(3, 9, 56, 0.3);
+  overflow: hidden;
+  width: 100%;
+}
+
+.container .texte h1 {
+  font-size: 3rem;
+  white-space: nowrap;
+  filter: drop-shadow(10px 10px 10px black);
+}
+
+#ohmycode {
+  margin-top: 10%;
+  border-radius: 100px;
+  padding: 10px;
+  box-shadow: 0 0 30px rgb(255, 0, 255);
+  color: aliceblue;
+}
+
+#ohmycode:hover,
+#ohmycodetel:hover {
+  color: rgb(121, 121, 244);
+}
+
+#ohmycodetel {
+  display: none;
+}
+
+.btnHeader {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btnHeader a {
+  color: white;
+  text-decoration: none;
+}
+
+.btnHeader i {
+  padding: 10px;
+  border-radius: 100px;
+  box-shadow: 0 0 30px rgb(255, 0, 255);
+}
+
+.btnHeader i:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+
+/* =========================
+   ABOUT ME
+========================= */
+
+#aboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 0 10rem;
+}
+
+.aboutMeParent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 8px;
+  width: 90%;
+}
+
+.div1 {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+.containerDownload {
+  margin: 50px;
+  text-align: center;
+}
+
+.download-btn {
+  text-decoration: none;
+  color: white;
+  background-color: rgb(255, 0, 255);
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0 0 40px rgb(255, 0, 255);
+}
+
+.div2 {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div2 img {
+  width: 80%;
+  border-radius: 100%;
+  border: 3px solid antiquewhite;
+  box-shadow: 0 0 40px rgb(255, 0, 255);
+}
+
+.div3 {
+  grid-column: span 5;
+  display: flex;
+  justify-content: space-around;
+}
+
+.case {
+  background-color: rgba(3, 9, 56, 0.3);
+  border-radius: 10px;
+  width: 25%;
+  padding: 20px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+#choix {
+  display: flex;
+  margin: 20px;
+  border-radius: 20px;
+  background-color: rgba(3, 9, 56, 0.3);
+}
+
+.webProject,
+.universityProject {
+  display: grid;
+  gap: 30px;
+  padding: 40px 70px;
+  border-radius: 20px;
+  background-color: rgba(3, 9, 56, 0.3);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  #ohmycode {
     display: none;
   }
+
+  #ohmycodetel {
+    display: block;
+  }
+
   .aboutMeParent {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .aboutMeParent .div3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 50px;
-  }
-  .textSousTitre {
-    text-align: center;
-  }
-  .aboutMeParent .div3 div {
-    margin: 20px;
-  }
-  .aboutMeParent img {
-    margin: 20px;
-  }
-  #choix {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 
-  .webProject, .universityProject,  #certificationContaineur {
+  .div3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .case {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  #choix {
+    flex-direction: column;
+  }
+
+  .webProject,
+  .universityProject {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
+    padding: 20px;
   }
-  
 }

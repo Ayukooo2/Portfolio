@@ -115,7 +115,7 @@ function createProjectCard(project) {
 function populateModals() {
   portfolio.innerHTML = `<div class="webProject">${personalProjects.map(createProjectCard).join("")}</div>`;
   university.innerHTML = `<div class="universityProject">${universityProjects.map(createProjectCard).join("")}</div>`;
-  certification.innerHTML = `<div id="certificationContaineur">${certifications.map(createProjectCard).join("")}</div>`;
+  certification.innerHTML = `<div class="certificationContaineur">${certifications.map(createProjectCard).join("")}</div>`;
 
   // Ajout des événements pour les boutons "View" et fermer les détails
   document.querySelectorAll(".view-btn").forEach((btn) => {
