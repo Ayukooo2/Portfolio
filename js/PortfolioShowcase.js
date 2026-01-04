@@ -78,16 +78,51 @@ const universityProjects = [
 const certifications = [
   {
     title: "BAC Général",
-    desc: "Obtention du Bac Général en 2024",
-    details: "Obtention dans le lycée Charlotte Perriand à Genech, avec les spécialités Mathématiques et NSI (+ Physique Chimie).",
-    img: "./public/IMG_7267.webp",
+    desc: "Baccalauréat général obtenu en 2024, avec les spécialités Mathématiques et NSI, apportant de solides bases en algorithmique et logique informatique.",
+    img: "./public/imageProject/BacGeneral.png",
+  },
+  {
+    title: "Java",
+    desc: "Programmation orientée objet (POO), conception MVC, interfaces graphiques avec JavaFX et FXML, sérialisation, principes SOLID, bases de JEE, maitrice de JDPC, ainsi que la gestion des exceptions et collections.",
+    img: "./public/imageProject/JavaLogo.avif",
+  },
+  {
+    title: "SQL",
+    desc: "Conception et gestion de bases de données relationnelles, requêtes complexes (SELECT, JOIN), insertions, mises à jour, suppression de données et intégration avec JDBC.",
+    img: "./public/imageProject/SQLLogo.png",
+  },
+  {
+    title: "C",
+    desc: "Programmation bas niveau, gestion de la mémoire, pointeurs, processus et forks, PID, manipulation du système d’exploitation, compréhension du fonctionnement interne des programmes.",
+    img: "./public/imageProject/CLogo.webp",
+  },
+  {
+    title: "Markdown",
+    desc: "Rédaction de documentation technique claire et structurée : README, rapports, guides d’installation et présentations de projets, avec une mise en forme lisible et professionnelle.",
+    img: "./public/imageProject/MarkdownLogo.svg",
+  },
+  {
+    title: "HTML",
+    desc: "Bases du HTML pour structurer des pages web, intégrer du contenu (textes, images, liens) et comprendre le fonctionnement d’une page web.",
+    img: "./public/imageProject/HTMLLogo.png",
+  },
+  {
+    title: "CSS",
+    desc: "Bases du CSS pour styliser des pages web, gérer les couleurs, les mises en page simples et adapter l’affichage selon la taille de l’écran.",
+    img: "./public/imageProject/CSSLogo.avif",
+  },
+  {
+    title: "Python",
+    desc: "Bonnes connaissances en Python acquises précédemment, avec une solide compréhension de la logique de programmation, mais peu utilisées récemment.",
+    img: "./public/imageProject/PythonLogo.jpg",
   }
 ];
 
 
 
+
 // Crée une carte de projet avec modal interne pour détails et image
-function createProjectCard(project) {
+function createProjectCard(project, withView = true) {
   return `
     <div class="card">
       <div class="image">
@@ -96,8 +131,13 @@ function createProjectCard(project) {
       <div class="content">
         <h3 class="title">${project.title}</h3>
         <p class="desc">${project.desc}</p>
-        <button class="action view-btn">View</button>
+
+        ${withView ? `<button class="action view-btn">View</button>` : ""}
       </div>
+
+      ${
+        withView
+          ? `
       <div class="project-details-modal">
         <div class="details-content">
           <span class="close-details">&times;</span>
@@ -106,32 +146,53 @@ function createProjectCard(project) {
           <p>${project.details}</p>
         </div>
       </div>
+      `
+          : ""
+      }
     </div>
   `;
 }
 
 
+
 // Injection des contenus dans les modals
 function populateModals() {
-  portfolio.innerHTML = `<div class="webProject">${personalProjects.map(createProjectCard).join("")}</div>`;
-  university.innerHTML = `<div class="universityProject">${universityProjects.map(createProjectCard).join("")}</div>`;
-  certification.innerHTML = `<div class="certificationContaineur">${certifications.map(createProjectCard).join("")}</div>`;
+  portfolio.innerHTML = `
+    <div class="webProject">
+      ${personalProjects.map(p => createProjectCard(p, true)).join("")}
+    </div>
+  `;
 
-  // Ajout des événements pour les boutons "View" et fermer les détails
+  university.innerHTML = `
+    <div class="universityProject">
+      ${universityProjects.map(p => createProjectCard(p, true)).join("")}
+    </div>
+  `;
+
+  certification.innerHTML = `
+    <div class="certificationContaineur">
+      ${certifications.map(c => createProjectCard(c, false)).join("")}
+    </div>
+  `;
+
+  // Events View
   document.querySelectorAll(".view-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const detailsModal = e.target.closest(".card").querySelector(".project-details-modal");
+      const detailsModal = e.target
+        .closest(".card")
+        .querySelector(".project-details-modal");
       detailsModal.style.display = "flex";
     });
   });
 
+  // Events Close
   document.querySelectorAll(".close-details").forEach((span) => {
     span.addEventListener("click", (e) => {
-      const modal = e.target.closest(".project-details-modal");
-      modal.style.display = "none";
+      e.target.closest(".project-details-modal").style.display = "none";
     });
   });
 }
+
 
 // Appel pour remplir les modals dès le chargement
 populateModals();
