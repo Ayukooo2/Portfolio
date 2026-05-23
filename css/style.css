@@ -13,12 +13,12 @@
 :root {
   --html: #e86026;
   --css: #0f6cac;
-  --Js: #f4dd1b;
+  --js: #f4dd1b;
   --git: #ed4b26;
 }
 html {
   font-family: "sour-gummy";
-  scroll-behavior: smooth; /* Pour un défilement fluide */
+  scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
 body {
@@ -39,7 +39,7 @@ body {
 }
 
 /* =========================
-   HEADER (Unifié & Corrigé)
+   HEADER
 ========================= */
 
 header {
@@ -49,32 +49,28 @@ header {
   width: 100%;
   z-index: 99;
   background-color: rgba(3, 9, 56, 0.3);
-  /* Empêche le contenu de déborder si on ajoute du padding */
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Utilisez un padding en % ou en px raisonnable */
-  padding: 0 20px; 
+  padding: 0 20px;
   width: 100%;
   height: 70px;
-  box-sizing: border-box; /* Crucial pour que le padding reste à l'intérieur des 100% */
+  box-sizing: border-box;
 }
 
-/* Conteneur des boutons/liens à gauche */
-.btnHeader {
+.nav-links {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 15px; /* Espace entre vos icônes */
+  gap: 15px;
 }
 
-/* Sélecteur de langue à droite */
 header #language-selector {
-  margin: 0; /* On retire les marges auto pour laisser le Flexbox gérer */
+  margin: 0;
   padding: 8px 12px;
   background-color: rgba(3, 9, 56, 0.4);
   color: white;
@@ -91,16 +87,16 @@ header #language-selector:hover {
 }
 
 
-.colorHtml {
+.color-html {
   color: var(--html);
 }
-.colorCss {
+.color-css {
   color: var(--css);
 }
-.colorJs {
-  color: var(--Js);
+.color-js {
+  color: var(--js);
 }
-.colorGit {
+.color-git {
   color: var(--git);
 }
 
@@ -112,11 +108,11 @@ header #language-selector:hover {
   color: white;
 }
 .container {
-  position: relative; /* Ajouté pour que les étoiles soient positionnées par rapport à la container */
+  position: relative;
   text-align: center;
   padding: 10%;
   background-color: rgba(3, 9, 56, 0.3);
-  overflow: hidden; /* Cache les étoiles qui sortent de la container */
+  overflow: hidden;
   width: 100%;
 }
 .container .texte {
@@ -124,8 +120,8 @@ header #language-selector:hover {
 }
 .container .texte h1 {
   font-size: 3rem;
-  overflow: hidden; /* Cache les lettres qui sortent de l'écran */
-  white-space: nowrap; /* Empêche le retour à la ligne */
+  overflow: hidden;
+  white-space: nowrap;
   z-index: 1;
   filter: drop-shadow(10px 10px 10px black);
 }
@@ -148,59 +144,45 @@ header #language-selector:hover {
 .container #ohmycodetel:hover {
   color: rgb(121, 121, 244);
 }
-.btnHeader {
+.nav-links {
   z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.btnHeader > a {
+.nav-links > a {
   text-decoration: none;
   color: white;
 }
-.btnHeader > a > i {
+.nav-links > a > i {
   margin: 10px;
   border-radius: 100px;
   padding: 10px;
   box-shadow: 0 0 30px rgb(255, 0, 255);
 }
 
-.btnHeader > a > i:hover {
+.nav-links > a > i:hover {
   transform: scale(1.5);
   margin-left: 20px;
   margin-right: 20px;
   transition-duration: 0.5s;
 }
-.degradeCouleur {
+.gradient-text {
   font-family: "titre";
   background: linear-gradient(to left, rgb(255, 255, 255), rgb(121, 121, 244));
-  background-clip: text; /* Pour les navigateurs modernes */
-  -webkit-background-clip: text; /* Pour Safari */
-  -webkit-text-fill-color: transparent; /* Pour Safari */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   filter: drop-shadow(10px 10px 10px black);
 }
-/* Méthode de secours : couleur de texte solide */
 @supports not (background-clip: text) {
-  .degradeCouleur {
+  .gradient-text {
     font-family: "titre";
-    color: rgb(
-      121,
-      121,
-      244
-    ); /* Couleur de secours si le background-clip n'est pas supporté */
-    background: none; /* Supprime le fond dégradé */
+    color: rgb(121, 121, 244);
+    background: none;
     filter: drop-shadow(10px 10px 10px black);
   }
-}
-
-.letter {
-  display: inline-block;
-  opacity: 0; /* Cache les lettres au départ */
-  transform: translateY(
-    -100px
-  ); /* Positionne les lettres en dehors de l'écran */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Animation */
 }
 
 .stars {
@@ -210,7 +192,7 @@ header #language-selector:hover {
   right: 0;
   height: 100%;
   overflow: hidden;
-  pointer-events: none; /* Pour que les étoiles ne bloquent pas les clics */
+  pointer-events: none;
 }
 
 .star {
@@ -238,7 +220,7 @@ h1 {
   font-size: xx-large;
 }
 
-.aboutMeParent {
+.about-grid {
   display: grid;
   grid-template-columns: repeat(5, auto);
   grid-template-rows: repeat(5, auto);
@@ -247,17 +229,17 @@ h1 {
   margin-top: 5%;
 }
 
-.div1 {
+.about-text {
   grid-column: span 3 / span 3;
   grid-row: span 3 / span 3;
 }
 
-.div1 .containerDownload {
+.about-text .download-container {
   margin: 50px;
   font-size: large;
 }
 
-.div1 .containerDownload .download-btn {
+.about-text .download-container .download-btn {
   text-decoration: none;
   color: white;
   border-radius: 50px;
@@ -265,12 +247,12 @@ h1 {
   padding: 20px;
   box-shadow: 0 0 40px rgb(255, 0, 255);
 }
-.div1 .containerDownload .download-btn:hover {
+.about-text .download-container .download-btn:hover {
   font-size: x-large;
   transition-duration: 0.5s;
 }
 
-.div2 {
+.about-photo {
   grid-column: span 2 / span 2;
   grid-row: span 3 / span 3;
   grid-column-start: 4;
@@ -279,7 +261,7 @@ h1 {
   align-items: center;
   margin: 10px;
 }
-.div2 img {
+.about-photo img {
   width: 80%;
   border-radius: 100%;
   border: solid 3px antiquewhite;
@@ -287,7 +269,7 @@ h1 {
   box-shadow: 0 0 40px rgb(255, 0, 255);
 }
 
-.div3 {
+.about-stats {
   grid-column: span 5 / span 5;
   grid-row: span 2 / span 2;
   grid-row-start: 4;
@@ -296,7 +278,7 @@ h1 {
   align-items: center;
 }
 
-.div3 .case {
+.about-stats .stat-card {
   background-color: rgba(3, 9, 56, 0.3);
   border-radius: 10px;
   width: 25%;
@@ -306,7 +288,7 @@ h1 {
   align-items: baseline;
 }
 
-.div3 .case i {
+.about-stats .stat-card i {
   margin-bottom: 20px;
 }
 
@@ -330,18 +312,18 @@ h1 {
   cursor: pointer;
 }
 
-#btn-choix1 {
+#btn-personal-tab {
   background-color: rgba(107, 104, 128, 0.6);
 }
 .modal {
-  display: none; /* Masquer par défaut */
-  opacity: 0; /* Opacité initiale */
-  transition: opacity 1s ease; /* Transition d'opacité */
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .modal.show {
-  display: block; /* Afficher le modal */
-  opacity: 1; /* Opacité finale */
+  display: block;
+  opacity: 1;
 }
 
 #webProject {
@@ -351,7 +333,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.webProject {
+.personal-projects-grid {
   padding: 40px 70px;
   border-radius: 20px;
   background-color: rgba(3, 9, 56, 0.3);
@@ -362,38 +344,6 @@ h1 {
   margin: 10px;
 }
 
-.webProject1 {
-  grid-column-start: 1;
-  grid-row-start: 1;
-}
-
-.webProject2 {
-  grid-column-start: 2;
-  grid-row-start: 1;
-}
-
-.webProject3 {
-  grid-column-start: 3;
-  grid-row-start: 1;
-}
-
-.webProject4 {
-  grid-column-start: 1;
-  grid-row-start: 2;
-}
-
-.webProject5 {
-  grid-column-start: 2;
-  grid-row-start: 2;
-}
-.webProject6 {
-  grid-column-start: 3;
-  grid-row-start: 2;
-}
-.webProject7 {
-  grid-column-start: 1;
-  grid-row-start: 3;
-}
 .card {
   max-width: 300px;
   height: 350px;
@@ -462,7 +412,8 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.universityProject, .certificationContaineur {
+.university-projects-grid,
+.certifications-grid {
   padding: 40px 70px;
   border-radius: 20px;
   background-color: rgba(3, 9, 56, 0.3);
@@ -474,15 +425,11 @@ h1 {
 }
 
 
-
 .reveal {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease, transform 1s ease;
-  transition-delay: var(
-    --delay,
-    0s
-  ); /* Utilisation de la variable CSS pour le délai d'apparition */
+  transition-delay: var(--delay, 0s);
 }
 
 .reveal.visible {
@@ -492,14 +439,14 @@ h1 {
 
 .reveal.disappear-up {
   opacity: 0;
-  transform: translateY(-50px); /* Déplace l'élément vers le haut */
-  transition: opacity 1s ease, transform 1s ease; /* Durée de transition sans délai */
+  transform: translateY(-50px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .reveal.disappear-down {
   opacity: 0;
-  transform: translateY(50px); /* Déplace l'élément vers le bas */
-  transition: opacity 1s ease, transform 1s ease; /* Durée de transition sans délai */
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .project-details-modal {
@@ -548,7 +495,7 @@ footer {
 }
 
 footer a {
-  color: #6b6880; /* Ou ta couleur dégradée */
+  color: #6b6880;
   text-decoration: none;
   font-size: 0.9em;
   transition: 0.3s;

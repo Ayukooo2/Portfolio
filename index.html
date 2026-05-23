@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Découvrez le portfolio de Valentino Paganin, développeur web passionné. Parcourez mes projets, compétences et réalisations en développement front-end et web design. Transformons ensemble vos idées en expériences digitales uniques !"
+      content="Découvrez le portfolio de Valentino Paganin, développeur web passionné. Parcourez mes projets, compétences et réalisations en développement front-end et web design. Transformons ensemble vos idées en expériences digitales uniques !"
     />
     <meta
       name="keywords"
@@ -33,7 +33,7 @@
   <body>
     <header>
       <nav>
-        <div class="btnHeader" id="liens">
+        <div class="nav-links" id="liens">
           <a href="#aboutMe" class="reveal" data-delay="0.3" aria-label="About Me">
             <i class="fa-regular fa-user" aria-hidden="true"></i>
           </a>
@@ -53,7 +53,7 @@
       <div class="container">
         <div class="texte">
           <h1 id="welcome">WELCOME TO MY</h1>
-          <h1 id="portfolio" class="degradeCouleur" style="font-family: 'titre'">
+          <h1 id="portfolio" class="gradient-text" style="font-family: 'titre'">
             WEBSITE PORTFOLIO
           </h1>
         </div>
@@ -71,52 +71,52 @@
     </section>
 
     <section id="aboutMe">
-      <h2 class="degradeCouleur" id="about_title">ABOUT ME</h2>
-      <p class="textSousTitre" id="about_intro">
+      <h2 class="gradient-text" id="aboutTitle">ABOUT ME</h2>
+      <p class="section-subtitle" id="aboutIntro">
         <i class="fa-solid fa-fan fleur" style="color: #8a64de" aria-hidden="true"></i>
         Transforming ideas into digital experiences
         <i class="fa-solid fa-fan fleur" style="color: #8a64de" aria-hidden="true"></i>
       </p>
 
-      <div class="aboutMeParent">
-        <div class="div1 reveal" data-delay="0.8">
-          <h3 class="degradeCouleur" id="about_hello">Hello, I'm</h3>
+      <div class="about-grid">
+        <div class="about-text reveal" data-delay="0.8">
+          <h3 class="gradient-text" id="aboutHello">Hello, I'm</h3>
           <h3>Valentino Paganin</h3>
-          <p style="text-align: justify" id="about_text">
+          <p style="text-align: justify" id="aboutText">
             I'm a French student in Web Development. I love turning ideas and projects into real websites. Passionate about web technologies, I can create attractive and functional user interfaces. My goal is to provide a smooth and enjoyable user experience while following development best practices. I am always looking for new challenges and opportunities to learn and grow in this dynamic field.
           </p>
-          <div class="containerDownload">
-            <a href="./public/cv/CV_Valentino_Paganin.pdf" download="CV_Valentino_Paganin.pdf" class="download-btn" id="cv_button">
+          <div class="download-container">
+            <a href="./public/cv/CV_Valentino_Paganin.pdf" download="CV_Valentino_Paganin.pdf" class="download-btn" id="cvButton">
               Download my CV
             </a>
           </div>
         </div>
 
-        <div class="div2">
+        <div class="about-photo">
           <img src="./public/Valentino.jpg" alt="Photo de Valentino Paganin" class="reveal" data-delay="0.5" />
         </div>
 
-        <div class="div3">
-          <div class="case reveal" data-delay="0.3">
+        <div class="about-stats">
+          <div class="stat-card reveal" data-delay="0.3">
             <div>
               <i class="fa-solid fa-code fa-3x" aria-hidden="true"></i>
-              <h4 id="project_total_title">TOTAL PROJECTS</h4>
-              <p style="font-size: large" id="project_total">All my web projects</p>
+              <h4 id="projectTotalTitle">TOTAL PROJECTS</h4>
+              <p style="font-size: large" id="projectTotal">All my web projects</p>
             </div>
             <h1>10</h1>
           </div>
-          <div class="case reveal" data-delay="0.5">
+          <div class="stat-card reveal" data-delay="0.5">
             <div>
               <i class="fa-solid fa-graduation-cap fa-3x" aria-hidden="true"></i>
-              <h4 id="certificates_title">Qualités</h4>
+              <h4 id="certificatesTitle">Qualités</h4>
               <p style="font-size: large" id="certificates">All my professional skills</p>
             </div>
             <h1>∞ - 1</h1>
           </div>
-          <div class="case reveal" data-delay="0.7">
+          <div class="stat-card reveal" data-delay="0.7">
             <div>
               <i class="fa-solid fa-calendar-days fa-3x" aria-hidden="true"></i>
-              <h4 id="experience_title">EXPERIENCE</h4>
+              <h4 id="experienceTitle">EXPERIENCE</h4>
               <p style="font-size: large" id="experience">Years of experience</p>
             </div>
             <h1>2024</h1>
@@ -126,28 +126,26 @@
     </section>
 
     <section id="portfolioExplore">
-      <h2 class="degradeCouleur" id="portfolio_showcase">Portfolio Showcase</h2>
-      <p class="textSousTitre" id="portfolio_subtitle">
+      <h2 class="gradient-text" id="portfolioShowcase">Portfolio Showcase</h2>
+      <p class="section-subtitle" id="portfolioSubtitle">
         Explore my web projects, certifications, and technical expertise.
       </p>
 
       <div id="choix">
-        <div class="reveal btn-choix" id="btn-choix4" data-delay="0.6">
-          <p id="btn_university">University projects</p>
+        <div class="reveal btn-choix" id="btn-university-tab" data-delay="0.6">
+          <p id="btnUniversity">University projects</p>
         </div>
-        <div class="reveal btn-choix" id="btn-choix1" data-delay="0.6">
-          <p id="btn_personal">Personal projects</p>
+        <div class="reveal btn-choix" id="btn-personal-tab" data-delay="0.6">
+          <p id="btnPersonal">Personal projects</p>
         </div>
-        <div class="reveal btn-choix" id="btn-choix2" data-delay="0.6">
-          <p id="btn_certificates">Certificates</p>
+        <div class="reveal btn-choix" id="btn-certificates-tab" data-delay="0.6">
+          <p id="btnCertificates">Certificates</p>
         </div>
       </div>
 
-      <!-- Modals générables via JS -->
-      <div id="modal1" class="modal"></div>
-      <div id="modal2" class="modal"></div>
-      <div id="modal3" class="modal"></div>
-      <div id="modal4" class="modal"></div>
+      <div id="personalProjectsModal" class="modal"></div>
+      <div id="certificationsModal" class="modal"></div>
+      <div id="universityProjectsModal" class="modal"></div>
     </section>
 
 
@@ -166,7 +164,7 @@
   <div id="legal-modal" class="project-details-modal">
     <div class="details-content">
       <span class="close-legal">&times;</span>
-      
+
       <div class="lang-fr">
         <h2>Mentions Légales</h2>
         <p><strong>Éditeur :</strong> Valentino Paganin</p>
